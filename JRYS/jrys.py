@@ -529,7 +529,7 @@ async def _draw_card(theme: dict, data: dict, nickname: str, user_id: str,
     )
 
 
-@sv_jrys.on_command(("今日运势", "运势", "jrys"))
+@sv_jrys.on_fullmatch(("今日运势", "jrys"))
 async def cmd_jrys(bot: Bot, ev: Event):
     user_id  = str(ev.user_id)
     date_str = datetime.now().strftime("%Y/%m/%d")
