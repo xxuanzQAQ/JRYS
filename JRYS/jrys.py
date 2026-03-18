@@ -214,9 +214,17 @@ def _save_cache(user_id: str, data: dict) -> None:
 
 
 def _get_background() -> Optional[Image.Image]:
+    custom_path_str = JRYSConfig.get_config("BgImagePath").data.strip()
+    if custom_path_str:
+        search_path = Path(custom_path_str)
+        if not search_path.is_dir():
+            logger.warning(f"[JRYS] 自定义背景图目录不存在: {search_path}，回退到默认目录")
+            search_path = BG_IMAGE_PATH
+    else:
+        search_path = BG_IMAGE_PATH
     files = [
-        f for f in BG_IMAGE_PATH.iterdir()
-        if f.suffix.lower() in {".jpg", ".jpeg", ".png", ".gif", ".webp"}
+        f for f in search_path.rglob("*")
+        if f.is_file() and f.suffix.lower() in {".jpg", ".jpeg", ".png", ".gif", ".webp"}
     ]
     if not files:
         return None
