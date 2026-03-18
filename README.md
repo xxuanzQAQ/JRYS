@@ -1,6 +1,6 @@
 # JRYS · 今日运势
 
-基于 [gsuid_core](https://github.com/Stareven233/gsuid_core) 框架的今日运势插件，玄学解卦风格，生成精美运势卡片图片。
+基于 [gsuid_core](https://github.com/Genshin-bots/gsuid_core) 框架的今日运势插件，玄学解卦风格，生成精美运势卡片图片。
 
 ---
 
@@ -9,7 +9,6 @@
 - 根据用户 ID + 日期生成专属运势，同一天多次查询结果相同
 - 运势卡片包含：卦象标题、星星评级（0~10 星）、爻辞（两列两行）、四维属性条、占断建议
 - 支持随机背景图叠加，自动渐变融合
-- SSAA 2× 超采样渲染，输出 540px 高清无锯齿图片
 - 主题随机（秋叶 / 樱花 / 冰雪 / 森系 / 星空）
 
 ---
@@ -37,7 +36,7 @@
 
 ```bash
 cd gsuid_core/plugins
-git clone https://github.com/<your-username>/JRYS.git
+git clone https://github.com/xxuanzQAQ/JRYS.git
 ```
 
 重启 gsuid_core 后插件自动加载。
@@ -53,7 +52,6 @@ gsuid_core/data/JRYS/bg
 ```
 
 - 不放置背景图也可正常使用，卡片将以主题纯色背景显示
-- 建议图片尺寸不低于 540×400 像素，竖向图片效果更佳
 
 ---
 
